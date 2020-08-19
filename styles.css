@@ -40,3 +40,13 @@ form button:hover{
     background: #d88c77;
     color: white;
 }
+
+.note{
+    color: black;
+    background-color: white;
+    border: none;
+    width: 20rem;
+    padding: 0.5rem;
+    margin: 10px auto;
+    list-style: none;
+}
