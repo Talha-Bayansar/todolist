@@ -50,3 +50,13 @@ form button:hover{
     margin: 10px auto;
     list-style: none;
 }
+
+.todo-list li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note-span{
+    flex: 1;
+}

@@ -7,10 +7,32 @@ let addNote = (e) => {
     //prevent form from submitting!!!
     event.preventDefault();
     //prevent form from submitting!!!
+
+    //adding note
     let li = document.createElement("li");
-    li.innerText = inputNote.value;
-    li.classList.add("note");
+    li.classList.add("note")
+    let noteText = document.createElement("span");
+    noteText.innerText = inputNote.value;
+    noteText.classList.add("note-span");
+    li.appendChild(noteText);
     notesList.appendChild(li);
+    inputNote.value = null;
+    //adding note
+
+    //adding check button
+    let checkButton = document.createElement("button");
+    checkButton.innerHTML = '<i class="fas fa-check"></i>'
+    checkButton.classList.add("button-check");
+    li.appendChild(checkButton);
+    //adding check button
+
+    //adding trash button
+    let trashButton = document.createElement("button");
+    trashButton.innerHTML = '<i class="fas fa-trash"></i>'
+    trashButton.classList.add("button-trash");
+    li.appendChild(trashButton);
+    //adding trash button
+    
 }
 //eventlisteners
 addNoteButton.addEventListener("click", addNote);
