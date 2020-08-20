@@ -2,6 +2,7 @@
 let notesList = document.querySelector(".todo-list");
 let addNoteButton = document.querySelector(".add-note-button");
 let inputNote = document.querySelector(".input-note");
+let buttonCheck = document.querySelector(".button-check");
 //functions
 let addNote = (e) => {
     //prevent form from submitting!!!
@@ -32,7 +33,21 @@ let addNote = (e) => {
     trashButton.classList.add("button-trash");
     li.appendChild(trashButton);
     //adding trash button
-    
+
+    //eventlisteners
+    checkButton.addEventListener("click", checkNote);
+    trashButton.addEventListener("click", deleteNote);
+}
+
+let checkNote = (e) => {
+    console.log(e.target.parentElement);
+    let li = e.target.parentElement;
+    li.querySelector("span").classList.add("checked");
+}
+
+let deleteNote = (e) => {
+    let li = e.target.parentElement;
+    li.remove();
 }
 //eventlisteners
 addNoteButton.addEventListener("click", addNote);
