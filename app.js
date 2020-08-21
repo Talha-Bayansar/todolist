@@ -43,11 +43,15 @@ let checkNote = (e) => {
     console.log(e.target.parentElement);
     let li = e.target.parentElement;
     li.querySelector("span").classList.add("checked");
+    li.classList.add("opacity");
 }
 
 let deleteNote = (e) => {
     let li = e.target.parentElement;
-    li.remove();
+    li.classList.add("deleted");
+    li.addEventListener("transitionend", (e) => {
+        li.remove();
+    });
 }
 //eventlisteners
 addNoteButton.addEventListener("click", addNote);
